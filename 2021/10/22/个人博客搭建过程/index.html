@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="随机菜单, 晨暮">
-    <meta name="description" content="随机菜单 | 晨暮">
+    <meta name="keywords" content="个人博客搭建过程, 晨暮">
+    <meta name="description" content="前期准备工作：安装博客编写工具：https://www.typora.io/#windows
+下载并安装node.js
+官网下载：https://nodejs.org/en/
+安装与使用：见node笔记
+安装后验证：node -v
+下载并安">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>随机菜单 | 晨暮</title>
+    <title>个人博客搭建过程 | 晨暮</title>
     <link rel="icon" type="image/png" href="/chenmu.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/awesome/css/all.css">
@@ -309,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/chenmu.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/chenmu.github.io/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">随机菜单</h1>
+                    <h1 class="description center-align post-title">个人博客搭建过程</h1>
                 </div>
             </div>
         </div>
@@ -463,7 +468,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>前期准备工作：<br>安装博客编写工具：<a target="_blank" rel="noopener" href="https://www.typora.io/#windows">https://www.typora.io/#windows</a></p>
+<p>下载并安装node.js</p>
+<p>官网下载：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<p>安装与使用：见node笔记</p>
+<p>安装后验证：node -v</p>
+<p>下载并安装git</p>
+<p>官网下载:  <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>安装与使用：见git笔记</p>
+<p>安装后验证：git -v</p>
+<p>命令行安装cnpm</p>
+<p>命令：npm install -g cnpm –registry==<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
+<p>安装后验证：cnpm -v </p>
+<p>注明：建议所有命令都使用git执行，避免出错</p>
+<p>我使用github发布，所以有域名没域名都可以，能用就行</p>
+<p>配置SSH免密登入连接github<br>一、找到如下路径删除.ssh文件 ，（C:\user(你自己的用户名).ssh）<br>二、在这个路径（C:\user(你自己的用户名)\）在生成一个.ssh文件（ssh-keygen -t rsa -C github邮件地址 ）用git bash here执行，直接回车3次就行<br>三、新生成的文件中有个csv的文件，复制里面的密匙<br>四、开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key，把复制的内容粘贴进去，title随便填，保存即可，我们的公钥就添加成功了<br>五、最后使用git写入命令git config –global user.name “liuxianan”// 你的github用户名，非昵称$ git config –global user.email  “<a href="mailto:&#120;&#x78;&#x78;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#120;&#x78;&#x78;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a>“// 填写你的github注册邮箱<br>六、必须执行npm install hexo-deployer-git –save<br>到你想要保存代码的文件目录下生成文件（命令：hexo init）所有的命令都在git里面执行</p>
+<p>生成后更改_config.yml文件，在末尾添加<br>repository: <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>:username/chenmu.github.io.git#username是你自己的仓库名<br>branch: main<br>注（一定和type是同级字段）</p>
+<p>下载主题包，到themes里面去下载，用git命令：git clone <a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery.git">https://github.com/blinkfox/hexo-theme-matery.git</a></p>
+<p>修改_config.yml文件配置：theme：hexo-theme-matery（找到这个字段之地主题）</p>
+<p>后面博客编写就另外写</p>
+
                 
             </div>
             <hr/>
@@ -489,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/22/%E9%9A%8F%E6%9C%BA%E8%8F%9C%E5%8D%95/">https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/22/%E9%9A%8F%E6%9C%BA%E8%8F%9C%E5%8D%95/</a>
+                    <a href="https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/22/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/22/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,18 +594,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/chenmu.github.io/2021/10/22/%E9%9A%8F%E6%9C%BA%E8%8F%9C%E5%8D%95/">
+                <a href="/chenmu.github.io/2021/10/22/%E7%94%9F%E6%B4%BB%E5%95%8A%E7%94%9F%E6%B4%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/chenmu.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="随机菜单">
+                        <img src="/chenmu.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="生活啊生活">
                         
-                        <span class="card-title">随机菜单</span>
+                        <span class="card-title">生活啊生活</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -591,9 +614,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -602,7 +625,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
