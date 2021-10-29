@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="centos系统分区调整, 晨暮">
-    <meta name="description" content="centos系统分区调整 | 晨暮">
+    <meta name="description" content="tar cvf /tmp/home.tar /home####备份home分区文件umount /home####卸载home磁盘fuser -m -v -i -k /home####提示目标忙则干掉进程，没提示则继续lvremove /d">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -334,9 +334,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/chenmu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">个人学习</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -369,7 +373,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>tar cvf /tmp/home.tar /home<br>####备份home分区文件<br>umount /home<br>####卸载home磁盘<br>fuser -m -v -i -k /home<br>####提示目标忙则干掉进程，没提示则继续<br>lvremove /dev/mapper/centos-home<br>####删除home扇区<br>lvextend -L +100G /dev/mapper/centos-root<br>####给根目录对应的/dev/mapper/centos-root增加100G空间<br>xfs_growfs /dev/mapper/centos-root<br>####扩容<br>lvcreate -L 300G -n home centos<br>####重建home，分配剩余空间<br>mkfs.xfs /dev/centos/home<br>####创建文件系统<br>mount /dev/centos/home /home<br>####重新挂载<br>tar xvf /tmp/home.tar -C /home/<br>cd /home/home/<br>####home文件恢复</p>
+
                 
             </div>
             <hr/>
@@ -432,7 +437,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/chenmu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">个人学习</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -509,6 +518,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/chenmu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">个人学习</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
