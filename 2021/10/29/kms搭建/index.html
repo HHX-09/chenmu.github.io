@@ -1,0 +1,886 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="kms搭建, 晨暮">
+    <meta name="description" content="一、kms服务器搭建：wget https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz####下载vlmcsdnetstat -nxtlp | gr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>kms搭建 | 晨暮</title>
+    <link rel="icon" type="image/png" href="/chenmu.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/css/my.css">
+
+    <script src="/chenmu.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/chenmu.github.io/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/chenmu.github.io/" class="waves-effect waves-light">
+                    
+                    <img src="/chenmu.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">晨暮</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/chenmu.github.io/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/chenmu.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">晨暮</div>
+        <div class="logo-desc">
+            
+            欢迎噢
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/chenmu.github.io/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/chenmu.github.io/medias/featureimages/22.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">kms搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/chenmu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">个人学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-29
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>一、kms服务器搭建：<br>wget <a target="_blank" rel="noopener" href="https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz">https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz</a><br>####下载vlmcsd<br>netstat -nxtlp | grep 1688<br>####检查1688端口是否占用<br>cd binaries/Linux/intel/static/<br>####进入启动文件夹<br>ls<br>####查看适合的执行程序（此处我选的是64位的）<br>./vlmcsd-x64-musl-static<br>####执行启动<br>ps -ef |grep vlmcsd-x64-musl-static<br>####查看运行状态<br>#root      12705      1  0 18:44 ?        00:00:00 ./vlmcsd-x64-musl-static<br>#root      12711   9551  0 18:44 pts/0    00:00:00 grep –color=auto vlmcsd-x64-musl-static<br>#####此处为程序运行状态</p>
+<p>二、window sever操作：<br>slmgr.vbs /upk –卸载密钥，可以不输入<br>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX –安装新的密钥<br>slmgr /skms （KMS服务器IP）:1688 –设置计算机名，输入KMS服务器IP或者计算机名<br>slmgr /ato –尝试激活<br>slmgr.vbs -dlv –查看激活状态</p>
+<p>三、kms资源:<br>Windows Server 版本 1909、版本1903 和版本 1809<br>WINDOWS SERVER 版本 1909、版本1903 和版本 1809<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server Datacenter    6NMRW-2C8FM-D24W7-TQWMY-CWH2D<br>Windows Server Standard    N2KJX-J94YW-TQVFB-DG9YT-724CC<br>Windows Server LTSC/LTSB 版本<br>Windows Server 2022<br>WINDOWS SERVER 2022<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2022 Datacenter    WX4NM-KYWYW-QJJR4-XV3QB-6VM33<br>Windows Server 2022 Standard    VDYBN-27WPP-V4HQT-9VMD4-VMK7H<br>Windows Server 2019<br>WINDOWS SERVER 2019<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2019 Datacenter    WMDGN-G9PQG-XVVXX-R3X43-63DFG<br>Windows Server 2019 Standard    N69G4-B89J2-4G8F4-WWYCC-J464C<br>Windows Server 2019 Essentials    WVDHN-86M7X-466P6-VHXV7-YY726<br>Windows Server 2016<br>WINDOWS SERVER 2016<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2016 Datacenter    CB7KF-BWN84-R7R2Y-793K2-8XDDG<br>Windows Server 2016 Standard    WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY<br>Windows Server 2016 Essentials    JCKRF-N37P4-C2D82-9YXRT-4M63B<br>Windows 10，所有支持的半年频道版本<br>有关受支持的版本和服务终止日期的信息，请参阅 Windows 生命周期情况说明书。</p>
+<p>WINDOWS 10，所有支持的半年频道版本<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 10 专业版    W269N-WFGWX-YVC9B-4J6C9-T83GX<br>Windows 10 专业版 N    MH37W-N47XK-V7XM9-C7227-GCQG9<br>Windows 10 专业工作站版    NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J<br>Windows 10 专业工作站版 N    9FNHH-K3HBT-3W4TD-6383H-6XYWF<br>Windows 10 专业教育版    6TP4R-GNPTD-KYYHQ-7B7DP-J447Y<br>Windows 10 专业教育版 N    YVWGF-BXNMC-HTQYQ-CPQ99-66QFC<br>Windows 10 教育版    NW6C2-QMPVW-D7KKK-3GKT6-VCFB2<br>Windows 10 教育版 N    2WH4N-8QGBV-H22JP-CT43Q-MDWWJ<br>Windows 10 企业版    NPPR9-FWDCX-D2C8J-H872K-2YT43<br>Windows 10 企业版 N    DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4<br>Windows 10 企业版 G    YYVX9-NTFWV-6MDM3-9PT4T-4M68B<br>Windows 10 企业版 G N    44RPN-FTY23-9VTTB-MP9BX-T84FV<br>Windows 10 LTSC/LTSB 版本<br>Windows 10 LTSC 2019<br>WINDOWS 10 LTSC 2019<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 10 企业版 LTSC 2019    M7XTQ-FN8P6-TTKYV-9D4CC-J462D<br>Windows 10 企业版 N LTSC 2019    92NFX-8DJQP-P6BBQ-THF9C-7CG2H<br>Windows 10 LTSB 2016<br>WINDOWS 10 LTSB 2016<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 10 企业版 LTSB 2016    DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ<br>Windows 10 企业版 N LTSB 2016    QFFDN-GRT3P-VKWWX-X7T3R-8B639<br>Windows 10 LTSB 2015<br>WINDOWS 10 LTSB 2015<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 10 企业版 2015 LTSB    WNMTR-4C88C-JK8YV-HQ7T2-76DF9<br>Windows 10 企业版 2015 LTSB N    2F77B-TNFGY-69QQF-B8YKP-D69TJ<br>早期版本的 Windows Server<br>Windows Server 版本 1803<br>WINDOWS SERVER 版本 1803<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server Datacenter    2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG<br>Windows Server Standard    PTXN8-JFHJM-4WC78-MPCBR-9W4KR<br>Windows Server 版本 1709<br>WINDOWS SERVER 版本 1709<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server Datacenter    6Y6KB-N82V8-D8CQV-23MJW-BWTG6<br>Windows Server Standard    DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4<br>Windows Server 2012 R2<br>WINDOWS SERVER 2012 R2<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2012 R2 Server Standard    D2N9P-3P6X9-2R39C-7RTCD-MDVJX<br>Windows Server 2012 R2 Datacenter    W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9<br>Windows Server 2012 R2 Essentials    KNC87-3J2TX-XB4WP-VCPJV-M4FWM<br>Windows Server 2012<br>WINDOWS SERVER 2012<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2012    BN3D2-R7TKB-3YPBD-8DRP2-27GG4<br>Windows Server 2012 N    8N2M2-HWPGY-7PGT9-HGDD8-GVGGY<br>Windows Server 2012 单语言版    2WN2H-YGCQR-KFX6K-CD6TF-84YXQ<br>Windows Server 2012 特定国家/地区版    4K36P-JN4VD-GDC6V-KDT89-DYFKP<br>Windows Server 2012 Server 标准版    XC9B7-NBPP2-83J2H-RHMBY-92BT4<br>Windows Server 2012 MultiPoint 标准版    HM7DN-YVMH3-46JC3-XYTG7-CYQJJ<br>Windows Server 2012 MultiPoint 高级版    XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G<br>Windows Server 2012 Datacenter    48HP8-DN98B-MYWDG-T2DCC-8W83P<br>Windows Server 2008 R2<br>WINDOWS SERVER 2008 R2<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Server 2008 R2 Web 版    6TPJF-RBVHG-WBW2R-86QPH-6RTM4<br>Windows Server 2008 R2 HPC 版    TT8MH-CG224-D3D7Q-498W2-9QCTX<br>Windows Server 2008 R2 标准版    YC6KT-GKW9T-YTKYR-T4X34-R7VHC<br>Windows Server 2008 R2 企业版    489J6-VHDMP-X63PK-3K798-CPX3Y<br>Windows Server 2008 R2 Datacenter    74YFP-3QFB3-KQT8W-PMXWJ-7M648<br>面向基于 Itanium 系统的 Windows Server 2008 R2    GT63C-RJFQ3-4GMB6-BRFB9-CB83V<br>Windows 2008 Server<br>WINDOWS 2008 SERVER<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows Web Server 2008    WYR28-R7TFJ-3X2YQ-YCY4H-M249D<br>Windows Server 2008 标准版    TM24T-X9RMF-VWXK6-X8JC9-BFGM2<br>不带 Hyper-V 的 Windows Server 2008 标准版    W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ<br>Windows Server 2008 企业版    YQGMW-MPWTJ-34KDK-48M3W-X4Q6V<br>不带 Hyper-V 的 Windows Server 2008 企业版    39BXF-X8Q23-P2WWT-38T2F-G3FPG<br>Windows Server 2008 HPC    RCTX3-KWVHP-BR6TB-RB6DM-6X7HP<br>Windows Server 2008 Datacenter    7M67G-PC374-GR742-YH8V4-TCBY3<br>不带 Hyper-V 的 Windows Server 2008 数据中心版    22XQ2-VRXRG-P8D42-K34TD-G3QQC<br>面向基于 Itanium 系统的 Windows Server 2008    4DWFP-JF3DJ-B7DTH-78FJB-PDRHK<br>早期版本的 Windows<br>Windows 8.1<br>WINDOWS 8.1<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 8.1 专业版    GCRJD-8NW9H-F2CDX-CCM8D-9D6T9<br>Windows 8.1 专业版 N    HMCNV-VVBFX-7HMBH-CTY9B-B4FXY<br>Windows 8.1 企业版    MHF9N-XY6XB-WVXMC-BTDCT-MKKG7<br>Windows 8.1 企业版 N    TT4HM-HN7YT-62K67-RGRQJ-JFFXW<br>Windows 8<br>WINDOWS 8<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 8 专业版    NG4HW-VH26C-733KW-K6F98-J8CK4<br>Windows 8 专业版 N    XCVCF-2NXM9-723PB-MHCB7-2RYQQ<br>Windows 8 企业版    32JNW-9KQ84-P47T8-D8GGY-CWCK7<br>Windows 8 企业版 N    JMNMF-RHW7P-DMY6X-RF3DR-X2BQT<br>Windows 7<br>WINDOWS 7<br>操作系统版本    KMS 客户端安装程序密钥<br>Windows 7 专业版    FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4<br>Windows 7 专业版 N    MRPKT-YTG23-K7D7T-X2JMM-QY7MG<br>Windows 7 专业版 E    W82YF-2Q76Y-63HXB-FGJG9-GF7QX<br>Windows 7 企业版    33PXH-7Y6KF-2VJC9-XBBR8-HVTHH<br>Windows 7 企业版 N    YDRBP-3D83W-TY26F-D46B2-XCKRJ<br>Windows 7 企业版 E    C29WB-22CC8-VJ326-GHFJW-H9DH4</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/chenmu.github.io/about" rel="external nofollow noreferrer">晨暮</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/29/kms%E6%90%AD%E5%BB%BA/">https://hhx-09.github.io/chenmu.github.io/chenmu.github.io/2021/10/29/kms%E6%90%AD%E5%BB%BA/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/chenmu.github.io/about" target="_blank">晨暮</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/chenmu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">个人学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/chenmu.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/chenmu.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/chenmu.github.io/2021/10/29/centos%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA%E8%B0%83%E6%95%B4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/chenmu.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="centos系统分区调整">
+                        
+                        <span class="card-title">centos系统分区调整</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            晨暮
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/chenmu.github.io/2021/10/22/%E7%94%9F%E6%B4%BB%E5%95%8A%E7%94%9F%E6%B4%BB/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/chenmu.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="生活啊生活">
+                        
+                        <span class="card-title">生活啊生活</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            晨暮
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/chenmu.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/chenmu.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/chenmu.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/chenmu.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/chenmu.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/chenmu.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <a href="/chenmu.github.io/about" target="_blank">晨暮</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/HHX-09/chenmu.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2765666799@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2765666799" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2765666799" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/chenmu.github.io/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/chenmu.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="/chenmu.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/chenmu.github.io/libs/aos/aos.js"></script>
+    <script src="/chenmu.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/chenmu.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/chenmu.github.io/js/matery.js"></script>
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/chenmu.github.io/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/chenmu.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/chenmu.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
